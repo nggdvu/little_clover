@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LittleClover" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorOnPrimary">@color/absoluteWhite</item>
+        <item name="colorPrimaryContainer">@color/absoluteWhite</item>
+        <item name="colorOnPrimaryContainer">@color/absoluteWhite</item>
+        <item name="colorPrimaryInverse">@color/absoluteWhite</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnSecondary">#d4f1ca</item>
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryContainer">#d4f1ca</item>
+        <item name="android:textColorHint">@color/lightgray</item>
+        <item name="editTextColor">@color/black</item>
+        <item name="android:navigationBarDividerColor">@color/absoluteWhite</item>
+    </style>
+
+    <style name="Theme.LittleClover" parent="Base.Theme.LittleClover" />
+</resources>

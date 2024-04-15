@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/imageVw"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/gif_image"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"/>
+
+    <LinearLayout
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/imageVw">
+
+        <TextView
+            android:id="@+id/welcomeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:layout_marginEnd="@dimen/startend_margin"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/lexendbold"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/welcomeTitle"
+            android:textColor="@color/black"
+            android:textSize="38dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/welcomeTxt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:layout_marginEnd="@dimen/startend_margin"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lexendmedium"
+            android:justificationMode="inter_word"
+            android:lineSpacingMultiplier="1.5"
+            android:textColor="@color/notsoBlack"
+            android:text="@string/welcomeTxt"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tologinBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/orTxt"
+        android:layout_marginStart="@dimen/startend_margin"
+        android:layout_marginEnd="@dimen/startend_margin"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/lexendbold"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/orTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tosignupBtn"
+        android:layout_marginStart="@dimen/startend_margin"
+        android:layout_marginEnd="@dimen/startend_margin"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/lexendbold"
+        android:text="@string/orTxt"
+        android:textColor="@color/notsoBlack"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tosignupBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/guestloginTxt"
+        android:layout_marginStart="@dimen/startend_margin"
+        android:layout_marginEnd="@dimen/startend_margin"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/lexendbold"
+        android:text="@string/signupnewAccount"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/guestloginTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/startend_margin"
+        android:layout_marginEnd="@dimen/startend_margin"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/lexendbold"
+        android:text="@string/guestLogin"
+        android:textColor="@color/green"
+        android:textSize="16dp" />
+
+</RelativeLayout>

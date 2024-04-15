@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeBtn"
+        android:icon="@drawable/house"
+        android:title="@string/homeTitle"/>
+
+    <item
+        android:id="@+id/mapBtn"
+        android:icon="@drawable/maptrifold"
+        android:title="@string/mapTitle" />
+
+
+    <item
+        android:id="@+id/uploadBtn"
+        android:icon="@drawable/cameraplus"
+        android:title="@string/uploadTitle"/>
+
+
+    <item
+        android:id="@+id/messageBtn"
+        android:icon="@drawable/globehemisphereeast"
+        android:title="@string/communityTitle"/>
+
+    <item
+        android:id="@+id/userBtn"
+        android:icon="@drawable/user"
+        android:title="@string/yourPage"/>
+</menu>

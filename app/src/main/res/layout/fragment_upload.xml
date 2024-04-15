@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.UserFragment"
+    android:id="@+id/uploadFragment"
+    android:fitsSystemWindows="true">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/userToolbar"
+        android:minHeight="?attr/actionBarSize"
+        app:menu="@menu/upload_menu">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:text="@string/createCampaign"
+            android:textColor="@color/notsoBlack"
+            android:fontFamily="@font/lexendbold"
+            android:id="@+id/userName"
+            android:textSize="16dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/userToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/photoFrame"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:cardCornerRadius="8dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="@dimen/startend_margin">
+
+                <ImageView
+                    android:id="@+id/uploadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadImgBtn"
+                android:layout_width="167dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/uploadsimple"
+                android:fontFamily="@font/lexendbold"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:text="@string/uploadImg"
+                android:textAllCaps="false"
+                android:textColor="@color/green"
+                android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/titleTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/startend_margin"
+                        android:layout_marginEnd="@dimen/startend_margin"
+                        android:layout_marginTop="8dp"
+                        android:drawableLeft="@drawable/aa"
+                        android:inputType="textMultiLine"
+                        android:minLines="2"
+                        android:hint="@string/inputName"
+                        android:padding="8dp"
+                        android:drawablePadding="16dp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/lexendbold"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/moneyTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginStart="@dimen/startend_margin"
+                        android:layout_marginEnd="@dimen/startend_margin"
+                        android:inputType="numberDecimal"
+                        android:hint="@string/inputMoney"
+                        android:drawableLeft="@drawable/handarrowup"
+                        android:padding="8dp"
+                        android:drawablePadding="16dp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/lexendbold"
+                        android:textSize="14dp"/>
+
+
+            <FrameLayout
+                android:id="@+id/user_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <EditText
+                        android:id="@+id/locationTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/startend_margin"
+                        android:layout_marginEnd="@dimen/startend_margin"
+                        android:inputType="textMultiLine"
+                        android:minLines="2"
+                        android:hint="@string/inputLocation"
+                        android:drawableLeft="@drawable/mappin"
+                        android:padding="8dp"
+                        android:drawablePadding="16dp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/lexendbold"
+                        android:textSize="14dp"/>
+
+                    <EditText
+                        android:id="@+id/descriptionTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/startend_margin"
+                        android:layout_marginEnd="@dimen/startend_margin"
+                        android:layout_marginBottom="8dp"
+                        android:inputType="textMultiLine"
+                        android:minLines="2"
+                        android:hint="@string/inputDescription"
+                        android:padding="8dp"
+                        android:drawablePadding="16dp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/lexendmedium"
+                        android:textSize="14dp"/>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/funnelsimple"
+                    android:id="@+id/filterIcn"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toEndOf="@id/filterIcn"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/sortTxt"
+                    android:text="hoàn cảnh"
+                    android:textColor="@color/green"
+                    android:fontFamily="@font/lexendbold"
+                    android:textSize="14dp"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/campaignTypeSpinner"
+                    android:layout_width="44dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:theme="@style/spinner"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp">
+                <TextView
+                    android:id="@+id/textViewSelectedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lexendbold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:text=" " />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pickDateBtn"
+                    android:layout_width="153dp"
+                    android:layout_height="44dp"
+                    android:background="@color/transparent"
+                    android:drawableLeft="@drawable/calendarcheck"
+                    android:fontFamily="@font/lexendmedium"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingStart="8dp"
+                    android:text="@string/endDate"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/end"
+                android:textColor="@color/notsoBlack"
+                android:fontFamily="@font/lexendmedium"
+                android:padding="8dp"
+                android:textSize="14dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_bg"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin"
+                android:layout_marginBottom="100dp"
+                android:text="@string/upload"
+                android:textColor="@color/absoluteWhite"
+                android:textAllCaps="false"
+                android:fontFamily="@font/lexendbold"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
+

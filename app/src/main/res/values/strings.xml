@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">lá nhỏ</string>
+    <string name="homeTitle">bảng tin</string>
+    <string name="activity">hoạt động</string>
+    <string name="story">câu chuyện</string>
+    <string name="settings">cài đặt</string>
+    <string name="language">ngôn ngữ: Tiếng Việt</string>
+    <string name="contact">liên hệ</string>
+    <string name="userGuide">hướng dẫn sử dụng</string>
+    <string name="appreciationTxt">🌈 lá nhỏ cảm ơn bạn vì nghĩa cử của bạn đã giúp thế giới trở nên tốt đẹp hơn!</string>
+    <string name="campaigns">chiến dịch</string>
+    <string name="cardTxt">đã đồng hành cùng lá nhỏ</string>
+    <string name="yourPage">trang của bạn</string>
+    <string name="createCampaign">tạo chiến dịch</string>
+    <string name="uploadImg">tải ảnh chủ đề</string>
+    <string name="inputName">Nhập tên chiến dịch</string>
+    <string name="inputMoney">Nhập mục tiêu</string>
+    <string name="inputLocation">Nhập vị trí</string>
+    <string name="inputDescription">Nhập mô tả chiến dịch</string>
+    <string name="endDate">ngày kết thúc</string>
+    <string name="fatalDisease">Bệnh hiểm nghèo</string>
+    <string name="climateChange">Biến đổi khí hậu và Thiên tai</string>
+    <string name="communityProject">Dự án cộng đồng</string>
+    <string name="poverty">Hoàn cảnh khó khăn</string>
+    <string name="elderly">Người cao tuổi</string>
+    <string name="children">Trẻ em</string>
+    <string name="disabled">Người khuyết tật</string>
+    <string name="ethnicMinority">Vùng cao và Dân tộc thiểu số</string>
+    <string name="upload">đăng tải</string>
+    <string name="end">kết thúc khi đạt mục tiêu</string>
+    <string name="mapTitle">bản đồ cây</string>
+    <string name="uploadTitle">tạo chiến dịch</string>
+    <string name="messageTitle">nhắn tin</string>
+    <string name="achieveTxt">đã đạt được</string>
+    <string name="supportTxt">đồng hành</string>
+    <string name="login">đăng nhập</string>
+    <string name="email">Nhập email</string>
+    <string name="password">Nhập mật khẩu</string>
+    <string name="forgotTxt">quên mật khẩu?</string>
+    <string name="googleSignin">Đăng nhập với tài khoản Google</string>
+    <string name="welcomeTitle">chào mừng bạn đến với lá nhỏ</string>
+    <string name="welcomeTxt">Lá nhỏ là không gian để mỗi người có thể chia sẻ, lan tỏa những câu chuyện cảm hứng, và cùng nhau hành động vì một thế giới tốt đẹp hơn.</string>
+    <string name="orTxt">hoặc</string>
+    <string name="signupnewAccount">đăng ký tài khoản mới</string>
+    <string name="guestLogin">tiếp tục với tư cách khách</string>
+    <string name="signup">đăng ký</string>
+    <string name="cfpassword">Xác nhận mật khẩu</string>
+    <string name="signupcfTxt">tôi đã đọc và chấp nhận điều khoản</string>
+    <string name="languages">Tiếng Việt</string>
+    <string name="darkmode">chế độ tối: theo hệ thống</string>
+
+
+    <array name="campaignType">
+        <item>@string/fatalDisease</item>
+        <item>@string/climateChange</item>
+        <item>@string/communityProject</item>
+        <item>@string/poverty</item>
+        <item>@string/elderly</item>
+        <item>@string/children</item>
+        <item>@string/disabled</item>
+        <item>@string/ethnicMinority</item>
+    </array>
+
+    <!--array name="languageSwitch">
+        <item>Tiếng Việt</item>
+        <item>English</item>
+        <item>日本語</item>
+    </array-->
+    <string name="donate">quyên góp</string>
+    <string name="treemap">bản đồ cây</string>
+    <string name="send">gửi</string>
+    <string name="inputMessage">Nhập tin nhắn...</string>
+    <string name="communityTitle">cộng đồng lá nhỏ</string>
+    <string name="navigation">điều hướng</string>
+    <string name="feedguideTxt">Truy cập bảng tin để xem các hoạt động và câu chuyện nổi bật được cá nhân hóa dành cho bạn.</string>
+    <string name="mapguideTxt">Truy cập bản đồ cây để xem những hoạt động, chiến dịch thiện nguyện đang diễn ra quanh bạn.</string>
+    <string name="next">tiếp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="uploadguideTxt">Tạo chiến dịch giúp những hoàn cảnh khó khăn mà bạn biết dễ dàng tiếp cận cộng đồng lá nhỏ, những nhà hảo tâm và mạnh thường quân...</string>
+    <string name="communityguideTxt">Cộng đồng lá nhỏ là những người luôn sẵn sàng đồng hành, hỗ trợ cùng bạn nhằm chung tay ủng hộ cho những chiếc lá chưa lành.</string>
+    <string name="done">xong</string>
+    <string name="yourpageguideTxt">Trang của bạn là nơi bạn có thể xem lại những đóng góp của bạn với cộng đồng, cũng như tùy chỉnh giao diện ứng dụng.</string>
+    <string name="donateInfo">thông tin quyên góp</string>
+</resources>

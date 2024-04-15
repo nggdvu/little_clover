@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.LoginFragment"
+    android:fitsSystemWindows="true">
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:background="@color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:layout_marginStart="@dimen/startend_margin"
+        android:layout_marginTop="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/welcomeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:layout_marginEnd="@dimen/startend_margin"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/lexendbold"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/login"
+            android:textColor="@color/black"
+            android:textSize="38dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/emailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:layout_marginEnd="@dimen/startend_margin"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/type_box"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            android:padding="16dp"
+            android:drawableLeft="@drawable/mail"
+            android:drawablePadding="16dp"
+            android:textColor="@color/notsoBlack"
+            android:fontFamily="@font/lexendmedium"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/passwordLogin"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:layout_marginEnd="@dimen/startend_margin"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:background="@drawable/type_box"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:padding="16dp"
+            android:drawableLeft="@drawable/security_shield"
+            android:drawablePadding="16dp"
+            android:textColor="@color/notsoBlack"
+            android:fontFamily="@font/lexendmedium"
+            android:textSize="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:layout_marginEnd="@dimen/startend_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/lexendbold"
+            android:elevation="20dp"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lexendmedium"
+            android:text="@string/forgotTxt"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_above="@id/googleBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        app:lottie_rawRes="@raw/clover"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:id="@+id/cloverAnimation"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/googleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/startend_margin"
+        android:layout_marginEnd="@dimen/startend_margin"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/gbutton_bg"
+        android:drawableLeft="@drawable/google"
+        android:fontFamily="@font/lexendmedium"
+        android:onClick="googleSignInButton"
+        android:layout_gravity="center"
+        android:paddingStart="16dp"
+        android:gravity="center"
+        android:text="@string/googleSignin"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+
+
+</RelativeLayout>

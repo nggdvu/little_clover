@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/userGuide_container"
+    tools:context=".fragments.UserGuideFragment"
+    android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/toolbarFrame">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/toolbar"
+
+                android:minHeight="?attr/actionBarSize">
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:background="@color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/x"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/startend_margin"
+                    android:text="@string/userGuide"
+                    android:fontFamily="@font/lexendbold"
+                    android:id="@+id/userName"
+                    android:textColor="@color/notsoBlack"
+                    android:textSize="16dp"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/transparent"
+        android:drawableLeft="@drawable/caretright"
+        android:fontFamily="@font/lexendbold"
+        android:textAllCaps="false"
+        android:text="@string/next"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/green"
+        android:textSize="16dp" />
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/toolbarFrame"
+                android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/welcomeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/lexendbold"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/homeTitle"
+                android:textColor="@color/black"
+                android:textSize="32dp"
+                android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/welcomeTxt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/startend_margin"
+                    android:layout_marginEnd="@dimen/startend_margin"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lexendmedium"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="@color/notsoBlack"
+                    android:text="@string/feedguideTxt"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/startend_margin"
+                    android:layout_marginEnd="@dimen/startend_margin"
+                    android:layout_marginTop="16dp"
+                    android:layout_height="440dp"
+                    android:src="@drawable/guide1"/>
+
+
+            </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

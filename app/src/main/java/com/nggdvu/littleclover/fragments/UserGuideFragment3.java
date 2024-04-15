@@ -1,0 +1,54 @@
+package com.nggdvu.littleclover.fragments;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.nggdvu.littleclover.R;
+public class UserGuideFragment3 extends Fragment {
+
+    ImageButton backBtn;
+    Button  nextBtn;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View fragmentView = inflater.inflate(R.layout.fragment_user_guide3, container, false);
+
+        backBtn = fragmentView.findViewById(R.id.backBtn);
+        nextBtn = fragmentView.findViewById(R.id.nextBtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserFragment userFragment = new UserFragment();
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.containerId, userFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserGuideFragment4 userGuideFragment4 = new UserGuideFragment4();
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out,
+                        android.R.anim.fade_in,
+                        android.R.anim.fade_out);
+                fragmentTransaction.replace(R.id.containerId, userGuideFragment4);
+                fragmentTransaction.commit();
+            }
+        });
+        return fragmentView;
+    }
+}

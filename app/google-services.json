@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "623676926215",
+    "firebase_url": "https://little-clover-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "little-clover",
+    "storage_bucket": "little-clover.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623676926215:android:131e737bc9b63f078abda2",
+        "android_client_info": {
+          "package_name": "com.nggdvu.littleclover"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623676926215-mudpp95e6l6n202jeg18ktkfl1i03vg9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nggdvu.littleclover",
+            "certificate_hash": "b363d5caaafbff894d491357a1af9b957c1307cc"
+          }
+        },
+        {
+          "client_id": "623676926215-nlm6uclfa4uc3dji92gq34t5g0ac8vmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVgDIYpJamR7ihKeViURHXnd8EajYYLhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623676926215-nlm6uclfa4uc3dji92gq34t5g0ac8vmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
