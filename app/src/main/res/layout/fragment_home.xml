@@ -118,7 +118,6 @@
                     android:textColor="@color/gray"
                     android:textAllCaps="true" />
 
-
             <HorizontalScrollView
                 android:id="@+id/storyView"
                 android:layout_width="match_parent"
@@ -133,29 +132,27 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/story1"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="8dp"
                         android:orientation="vertical">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyPhoto1"
+                            android:id="@+id/addStory"
                             android:layout_width="100dp"
                             android:layout_height="144dp"
                             android:layout_gravity="center"
-                            app:cardCornerRadius="8dp">
+                            app:cardBackgroundColor="@color/absoluteWhite"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/photo1"
+                            <ImageButton
+                                android:id="@+id/addStoryBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:scaleType="centerCrop"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/anh10" />
+                                android:layout_gravity="center"
+                                android:src="@drawable/cameraplus"
+                                android:background="@color/transparent"/>
 
                         </androidx.cardview.widget.CardView>
 
@@ -166,216 +163,30 @@
                             android:orientation="horizontal"
                             android:paddingTop="8dp">
 
-
                             <TextView
-                                android:id="@+id/sourceName1"
+                                android:id="@+id/addStoryTxt"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:fontFamily="@font/lexendmedium"
-                                android:text="Hương Giang"
-                                android:textColor="@color/black"
+                                android:fontFamily="@font/lexendbold"
+                                android:text="@string/addstory"
+                                android:textAlignment="center"
+                                android:textColor="@color/green"
                                 android:textSize="12dp" />
 
                         </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/story2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/storyPhoto2"
-                            android:layout_width="100dp"
-                            android:layout_height="144dp"
-                            android:layout_gravity="center"
-                            app:cardCornerRadius="8dp">
-
-                            <ImageView
-                                android:id="@+id/photo2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleType="centerCrop"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/anh2" />
-
-                        </androidx.cardview.widget.CardView>
-
-                        <LinearLayout
-                            android:id="@+id/sourcePanel2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingTop="8dp">
-
-
-                            <TextView
-                                android:id="@+id/sourceName2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:fontFamily="@font/lexendmedium"
-                                android:text="Hà Linh Official"
-                                android:textColor="@color/black"
-                                android:textSize="12dp" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/story3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/storyPhoto3"
-                            android:layout_width="100dp"
-                            android:layout_height="144dp"
-                            android:layout_gravity="center"
-                            app:cardCornerRadius="8dp">
-
-                            <ImageView
-                                android:id="@+id/photo3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleType="centerCrop"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/anh3" />
-
-                        </androidx.cardview.widget.CardView>
-
-                        <LinearLayout
-                            android:id="@+id/sourcePanel3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingTop="8dp">
-
-
-                            <TextView
-                                android:id="@+id/sourceName3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:fontFamily="@font/lexendmedium"
-                                android:text="Đen Vâu"
-                                android:textColor="@color/black"
-                                android:textSize="12dp" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/story4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/storyPhoto4"
-                            android:layout_width="100dp"
-                            android:layout_height="144dp"
-                            android:layout_gravity="center"
-                            app:cardCornerRadius="8dp">
-
-                            <ImageView
-                                android:id="@+id/photo4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleType="centerCrop"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/anh4" />
-
-                        </androidx.cardview.widget.CardView>
-
-                        <LinearLayout
-                            android:id="@+id/sourcePanel4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingTop="8dp">
-
-
-
-                            <TextView
-                                android:id="@+id/sourceName4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:fontFamily="@font/lexendmedium"
-                                android:text="Phạm Thoại"
-                                android:textColor="@color/black"
-                                android:textSize="12dp" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/story5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/storyPhoto5"
-                            android:layout_width="100dp"
-                            android:layout_height="144dp"
-                            android:layout_gravity="center"
-                            app:cardCornerRadius="8dp">
-
-                            <ImageView
-                                android:id="@+id/photo5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleType="centerCrop"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/anh1" />
-
-                        </androidx.cardview.widget.CardView>
-
-                        <LinearLayout
-                            android:id="@+id/sourcePanel5"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingTop="8dp">
-
-
-                            <TextView
-                                android:id="@+id/sourceName5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:fontFamily="@font/lexendmedium"
-                                android:text="Mai Kim Trí"
-                                android:textColor="@color/black"
-                                android:textSize="12dp" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
+                    <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/storyrv"
+                android:orientation="horizontal"/>
 
                 </LinearLayout>
 
             </HorizontalScrollView>
+
+
 
             <TextView
                 android:id="@+id/titleTxt2"

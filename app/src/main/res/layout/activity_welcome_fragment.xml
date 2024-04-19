@@ -80,7 +80,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/lexendbold"
         android:text="@string/orTxt"
-        android:textColor="@color/notsoBlack"
+        android:textColor="@color/green"
         android:textAlignment="center"
         android:textSize="16dp" />
 
@@ -88,10 +88,10 @@
         android:id="@+id/tosignupBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/guestloginTxt"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/startend_margin"
         android:layout_marginEnd="@dimen/startend_margin"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_bg"
         android:fontFamily="@font/lexendbold"
         android:text="@string/signupnewAccount"
@@ -99,7 +99,7 @@
         android:textColor="@color/white"
         android:textSize="16dp" />
 
-    <TextView
+    <!--TextView
         android:id="@+id/guestloginTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,6 +111,6 @@
         android:fontFamily="@font/lexendbold"
         android:text="@string/guestLogin"
         android:textColor="@color/green"
-        android:textSize="16dp" />
+        android:textSize="16dp" /-->
 
 </RelativeLayout>

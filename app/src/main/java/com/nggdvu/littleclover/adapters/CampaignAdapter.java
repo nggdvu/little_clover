@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.nggdvu.littleclover.fragments.HomeFragment;
 import com.nggdvu.littleclover.models.Campaign;
 import com.nggdvu.littleclover.R;
 import com.squareup.picasso.Picasso;
@@ -60,7 +61,7 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
             sort = itemView.findViewById(R.id.sortId);
             description = itemView.findViewById(R.id.descriptionId);
             time = itemView.findViewById(R.id.timeId);
-            button = itemView.findViewById(R.id.supportBtn);
+            //button = itemView.findViewById(R.id.supportBtn);
             cardView = itemView.findViewById(R.id.homeItem);
         }
     }

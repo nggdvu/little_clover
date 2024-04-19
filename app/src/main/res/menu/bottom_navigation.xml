@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/uploadBtn"
-        android:icon="@drawable/cameraplus"
+        android:icon="@drawable/calendarplus"
         android:title="@string/uploadTitle"/>
 
 

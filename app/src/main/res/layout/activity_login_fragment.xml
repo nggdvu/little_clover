@@ -93,7 +93,7 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <TextView
+        <!--TextView
             android:id="@+id/forgotPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
             android:textSize="16dp"
             android:textStyle="bold"
             android:textColor="@color/green"
-            android:textAlignment="center"/>
+            android:textAlignment="center"/-->
 
     </LinearLayout>
 

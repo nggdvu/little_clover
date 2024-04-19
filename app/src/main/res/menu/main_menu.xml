@@ -7,10 +7,10 @@
         android:title="Thông báo"
         android:icon="@drawable/bell"
         app:showAsAction="always"/>
-    <item
+    <!--item
         android:id="@+id/searchBtn"
-        android:title="Nhắn tin"
+        android:title="Search"
         android:icon="@drawable/magnifyingglass"
-        app:showAsAction="always"/>
+        app:showAsAction="always"/-->
 
 </menu>

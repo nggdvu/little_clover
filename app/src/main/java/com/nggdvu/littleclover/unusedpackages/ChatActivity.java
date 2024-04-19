@@ -1,4 +1,4 @@
-package com.nggdvu.littleclover.fragments;
+package com.nggdvu.littleclover.unusedpackages;
 
 import android.os.Bundle;
 
@@ -14,10 +14,11 @@ import com.nggdvu.littleclover.databinding.ActivityChatBinding;
 
 import java.util.List;
 
+//Chưa hoạt động
 public class ChatActivity extends AppCompatActivity {
 
-    ActivityChatBinding binding;
-    User receiveUser;
+    //ActivityChatBinding binding;
+    //User receiveUser;
     //List<ChatMessage> chatMessages;
 
     @Override

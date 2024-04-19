@@ -27,6 +27,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+//Tin nhắn chưa hoạt động, nhưng người dùng thì có
 public class MessageFragment extends Fragment {
 
     String name, email, avatar;
@@ -44,6 +45,7 @@ public class MessageFragment extends Fragment {
         msrv.setLayoutManager(linearLayoutManager);
         msrv.setNestedScrollingEnabled(false);
 
+        //Truyền dữ liệu
         FirebaseRecyclerOptions<Message> options =
                 new FirebaseRecyclerOptions.Builder<Message>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("users"), Message.class)

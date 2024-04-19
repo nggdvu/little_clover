@@ -35,19 +35,9 @@ public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLay
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNav);
         frameLayout = findViewById(R.id.containerId);
+
         /*swipeRefreshLayout = findViewById(R.id.refresh);
         swipeRefreshLayout.setOnRefreshListener(this);*/
-
-        FirebaseMessaging.getInstance().subscribeToTopic("Campaigns")
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                    String msq = "Done";
-                                    if (!task.isSuccessful()){
-                                        msq = "Failed";
-                                    }
-                            }
-                        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -56,7 +46,7 @@ public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLay
                 int itemId = menuItem.getItemId();
 
                 if (itemId == R.id.homeBtn) {
-                    loadFragment(new HomeFragment("image", "title", "aiming", "location", "description", "description","time"), false);
+                    loadFragment(new HomeFragment("image", "title", "aiming", "location", "description", "description", "time"), false);
 
                 } else if (itemId == R.id.mapBtn) {
                     loadFragment(new MapFragment(), false);

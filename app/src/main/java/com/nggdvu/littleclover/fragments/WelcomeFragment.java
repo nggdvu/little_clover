@@ -27,8 +27,10 @@ public class WelcomeFragment extends AppCompatActivity {
         tosignupBtn = findViewById(R.id.tosignupBtn);
         imageVw = findViewById(R.id.imageVw);
 
+        //Ảnh gif
         Glide.with(this).load(R.drawable.gif_image).into(imageVw);
 
+        //Đăng nhập
         tologinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +38,8 @@ public class WelcomeFragment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //Đăng ký
         tosignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

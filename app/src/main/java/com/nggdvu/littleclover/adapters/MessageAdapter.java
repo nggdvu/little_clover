@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.nggdvu.littleclover.listeners.UserListener;
+//import com.nggdvu.littleclover.listeners.UserListener;
 import com.nggdvu.littleclover.models.Campaign;
 import com.nggdvu.littleclover.models.Message;
 import com.nggdvu.littleclover.R;
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MessageAdapter extends FirebaseRecyclerAdapter<Message, MessageAdapter.viewHolder> {
 
-    UserListener userListener;
+    //UserListener userListener;
 
     public MessageAdapter(@NonNull FirebaseRecyclerOptions<Message> options) {
         super(options);

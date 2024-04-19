@@ -184,7 +184,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:paddingStart="8dp"/>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <!--androidx.appcompat.widget.AppCompatButton
                 android:layout_width="100dp"
                 android:layout_height="36dp"
                 android:text="@string/supportTxt"
@@ -196,7 +196,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:background="@drawable/smallbutton_bg"/>
+                android:background="@drawable/smallbutton_bg"/-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -230,7 +230,7 @@
             android:fontFamily="@font/lexendmedium"
             android:textColor="@color/black"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!--androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
@@ -254,7 +254,7 @@
                 android:id="@+id/save"
                 android:src="@drawable/bookmarksimple"
                 app:layout_constraintEnd_toEndOf="parent"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout-->
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.nggdvu.littleclover.fragments;
+package com.nggdvu.littleclover.unusedpackages;
 
 import android.os.Bundle;
 
@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.nggdvu.littleclover.R;
 
+//Chưa hoạt động
 public class DonateFragment extends Fragment implements View.OnClickListener {
 
     private EditText editText;
@@ -22,7 +23,7 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_donatng, container, false);
+        View view =  inflater.inflate(R.layout.fragment_donate, container, false);
 
         editText = view.findViewById(R.id.editText);
         textView = view.findViewById(R.id.textView);

@@ -39,19 +39,17 @@ public class SignupFragment extends AppCompatActivity {
         signupBtn = findViewById(R.id.signupBtn);
         auth = FirebaseAuth.getInstance();
 
+        //Đăng ký bằng email và password
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = signupEmail.getText().toString().trim();
                 String password = signupPassword.getText().toString().trim();
-
                 if (email.isEmpty()){
                     signupEmail.setError("Vui lòng nhập email");
                 }
-
                 if (password.isEmpty()){
                     signupPassword.setError("Vui lòng nhập mật khẩu");
-
                 } else {
                     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

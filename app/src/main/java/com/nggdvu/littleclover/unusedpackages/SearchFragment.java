@@ -1,4 +1,4 @@
-package com.nggdvu.littleclover.fragments;
+package com.nggdvu.littleclover.unusedpackages;
 
 import android.os.Bundle;
 
@@ -26,6 +26,7 @@ import com.nggdvu.littleclover.models.Campaign;
 
 import java.util.List;
 
+//Chưa hoạt động
 public class SearchFragment extends Fragment {
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
@@ -34,7 +35,6 @@ public class SearchFragment extends Fragment {
     List<Campaign> dataList;
     ValueEventListener eventListener;
     SearchView searchView;
-
     String image, title, aiming, location, sort, description, time;
 
     @Override
@@ -81,7 +81,7 @@ public class SearchFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.search_menu, menu);
+        //inflater.inflate(R.menu.search_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 

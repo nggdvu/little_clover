@@ -61,6 +61,13 @@
         <item>@string/ethnicMinority</item>
     </array>
 
+    <array name="hashtag">
+        <item>#khoanhkhacdep</item>
+        <item>#maiamtinhthuong</item>
+        <item>#thiennguyen</item>
+        <item>#tinhnguyen</item>
+    </array>
+
     <!--array name="languageSwitch">
         <item>Tiếng Việt</item>
         <item>English</item>
@@ -82,4 +89,9 @@
     <string name="done">xong</string>
     <string name="yourpageguideTxt">Trang của bạn là nơi bạn có thể xem lại những đóng góp của bạn với cộng đồng, cũng như tùy chỉnh giao diện ứng dụng.</string>
     <string name="donateInfo">thông tin quyên góp</string>
+    <string name="notification">thông báo</string>
+    <string name="notificationTxt">bạn chưa có thông báo mới nào.</string>
+    <string name="addstory">thêm tin mới</string>
+    <string name="createStory">tạo tin mới</string>
+    <string name="uploadstoryImg">"tải ảnh "</string>
 </resources>

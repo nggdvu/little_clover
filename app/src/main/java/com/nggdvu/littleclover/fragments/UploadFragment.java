@@ -77,6 +77,7 @@ public class UploadFragment extends Fragment {
 
         newCampaignRef = FirebaseDatabase.getInstance().getReference().child("campaigns");
 
+        //Nút đăng tải
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,21 +90,18 @@ public class UploadFragment extends Fragment {
             }
         });
 
+        //Nhập số định dạng tiền tệ
         moneyEditText.addTextChangedListener(new TextWatcher() {
             DecimalFormat decimalFormat = new DecimalFormat("#,###");
-
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 moneyEditText.removeTextChangedListener(this);
-
                 try {
                     String originalString = s.toString();
                     String cleanString = originalString.replaceAll("[,.]", "");
@@ -114,11 +112,11 @@ public class UploadFragment extends Fragment {
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
-
                 moneyEditText.addTextChangedListener(this);
             }
         });
 
+        //Bật chức năng chọn ngày
         pickDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,6 +124,7 @@ public class UploadFragment extends Fragment {
             }
         });
 
+        //Bật chức năng chọn ảnh
         chooseImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +132,7 @@ public class UploadFragment extends Fragment {
             }
         });
 
+        //Chức năng chọn loại chiến dịch từ Spinner, xuất ra văn bản
         String[] campaignTypes = getResources().getStringArray(R.array.campaignType);
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, campaignTypes);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -140,30 +140,28 @@ public class UploadFragment extends Fragment {
         campaignTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 String selectedText = parent.getItemAtPosition(position).toString();
-
                 sortTxt.setText(selectedText);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
         return view;
     }
 
+    //Nhắc người dùng điền thông tin
     private void insertCampaignData() {
         // Kiểm tra xem tất cả các trường bắt buộc đã được điền
         if (imageUri == null || titleEditText.getText().toString().isEmpty() || moneyEditText.getText().toString().isEmpty() || locationEditText.getText().toString().isEmpty() || selectedDate.getText().toString().isEmpty() || descriptionEditText.getText().toString().isEmpty()) {
             Toast.makeText(getContext(), "Vui lòng điền tất cả các trường", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        //Tải ảnh lên Cloud Storage
         storageReference = FirebaseStorage.getInstance().getReference().child("campaigns").child(imageUri.getLastPathSegment());
         storageReference.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    //Tạo link ảnh để xuất ra văn bản
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
@@ -175,11 +173,12 @@ public class UploadFragment extends Fragment {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Failed to upload image", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Đăng ảnh thất bại", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
+    //Tạo thông báo đẩy, chưa hoạt động hoặc tại máy
     private void makeNotification(String title, String content) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(requireContext(), "channel_id")
                 .setSmallIcon(R.drawable.cloversvg_02)
@@ -188,14 +187,13 @@ public class UploadFragment extends Fragment {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
-
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
         notificationManager.notify(1, builder.build());
     }
 
+    //Mở cửa sổ chọn ảnh
     private void openImageChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -203,6 +201,7 @@ public class UploadFragment extends Fragment {
         startActivityForResult(Intent.createChooser(intent, "Chọn ảnh"), PICK_IMAGE_REQUEST);
     }
 
+    //Tải ảnh lên ứng dụng
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -215,19 +214,7 @@ public class UploadFragment extends Fragment {
         }
     }
 
-    private void uploadData (){
-        String title = titleEditText.getText().toString();
-        String aiming = moneyEditText.getText().toString();
-        String location = locationEditText.getText().toString();
-        String sort = sortTxt.getText().toString();
-        String time = selectedDate.getText().toString();
-        String description = descriptionEditText.getText().toString();
-
-        Campaign campaign = new Campaign(imageURL, title, aiming, location, sort, description, time);
-
-        newCampaignRef.push().setValue(campaign);
-        Toast.makeText(getContext(), "Đăng tải thành công!", Toast.LENGTH_SHORT).show();
-    }
+    //Dialog chọn ngày
     private void showDatePickerDialog() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -242,5 +229,20 @@ public class UploadFragment extends Fragment {
             }
         }, year, month, day);
         datePickerDialog.show();
+    }
+
+    //Tải tất cả thông tin lên Database
+    private void uploadData (){
+        String title = titleEditText.getText().toString();
+        String aiming = moneyEditText.getText().toString();
+        String location = locationEditText.getText().toString();
+        String sort = sortTxt.getText().toString();
+        String time = selectedDate.getText().toString();
+        String description = descriptionEditText.getText().toString();
+
+        Campaign campaign = new Campaign(imageURL, title, aiming, location, sort, description, time);
+
+        newCampaignRef.push().setValue(campaign);
+        Toast.makeText(getContext(), "Đăng tải thành công!", Toast.LENGTH_SHORT).show();
     }
 }

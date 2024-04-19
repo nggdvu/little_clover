@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AddStoryFragment"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/userToolbar"
+        android:minHeight="?attr/actionBarSize"
+        app:menu="@menu/upload_menu">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:background="@color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/x"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startend_margin"
+            android:text="@string/createStory"
+            android:textColor="@color/notsoBlack"
+            android:fontFamily="@font/lexendbold"
+            android:id="@+id/userName"
+            android:textSize="16dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/addstoryImg"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadImgBtn"
+                android:layout_width="118dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/uploadsimple"
+                android:fontFamily="@font/lexendbold"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:text="@string/uploadstoryImg"
+                android:textAllCaps="false"
+                android:textColor="@color/green"
+                android:textSize="14dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/hash"
+                    android:id="@+id/filterIcn"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toEndOf="@id/filterIcn"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/hashtagTxt"
+                    android:text="hashtag"
+                    android:textColor="@color/green"
+                    android:fontFamily="@font/lexendbold"
+                    android:textSize="14dp"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/hashtagSpinner"
+                    android:layout_width="44dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:theme="@style/spinner"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/saveBtn"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_bg"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin"
+                android:layout_marginBottom="100dp"
+                android:text="@string/upload"
+                android:textColor="@color/absoluteWhite"
+                android:textAllCaps="false"
+                android:fontFamily="@font/lexendbold"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
