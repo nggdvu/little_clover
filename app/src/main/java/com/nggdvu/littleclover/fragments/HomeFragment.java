@@ -42,11 +42,9 @@ public class HomeFragment extends Fragment{
 
     RecyclerView recyclerView, storyrv;
     DatabaseReference databaseReference;
-    ImageButton addStoryBtn;
+    ImageButton addStoryBtn, allStoryBtn;
     CampaignAdapter campaignAdapter;
-    //FirebaseFirestore firebaseFirestore;
     StoryAdapter storyAdapter;
-    //ArrayList<Story> storyArrayList;
     String image, title, aiming, location, sort, description, time;
     String photo, hashtag;
 
@@ -56,30 +54,32 @@ public class HomeFragment extends Fragment{
         View fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
         addStoryBtn = fragmentView.findViewById(R.id.addStoryBtn);
+        allStoryBtn = fragmentView.findViewById(R.id.allStoryBtn);
         recyclerView = fragmentView.findViewById(R.id.rv);
+        storyrv = fragmentView.findViewById(R.id.storyrv);
+
+        //Chiến dịch
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, true);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
-
         //Truyền dữ liệu từ database
         FirebaseRecyclerOptions<Campaign> options =
                 new FirebaseRecyclerOptions.Builder<Campaign>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("campaigns"), Campaign.class)
                         .build();
-
         campaignAdapter = new CampaignAdapter(options);
         recyclerView.setAdapter(campaignAdapter);
 
-        storyrv = fragmentView.findViewById(R.id.storyrv);
+        //Hoạt động
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true);
+        storyrv.setHasFixedSize(false);
         storyrv.setLayoutManager(linearLayoutManager1);
         storyrv.setNestedScrollingEnabled(false);
-
         FirebaseRecyclerOptions<Story> stories =
                 new FirebaseRecyclerOptions.Builder<Story>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("stories"), Story.class)
                         .build();
-
         storyAdapter = new StoryAdapter(stories);
         storyrv.setAdapter(storyAdapter);
 
@@ -90,6 +90,17 @@ public class HomeFragment extends Fragment{
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
                 fragmentTransaction.replace(R.id.containerId, addStoryFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        allStoryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AllStoryFragment allStoryFragment = new AllStoryFragment("photo", "hashtag");
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
+                fragmentTransaction.replace(R.id.containerId, allStoryFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -110,28 +121,6 @@ public class HomeFragment extends Fragment{
         setHasOptionsMenu(true);
         return fragmentView;
     }
-
-    /*private void EventChangeListener() {
-        firebaseFirestore.collection("stories").orderBy("hashtag", Query.Direction.DESCENDING)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException error) {
-
-                        if (error !=null){
-                            Log.e("Lỗi cơ sở dữ liệu", error.getMessage());
-                            return;
-                        }
-                        for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()){
-                            if (documentChange.getType() == DocumentChange.Type.ADDED){
-
-                                storyArrayList.add(documentChange.getDocument().toObject(Story.class));
-                            }
-                            storyAdapter.notifyDataSetChanged();
-                        }
-                    }
-                });
-    }*/
-
 
     public HomeFragment(String photo, String hashtag, String image, String title, String aiming, String location, String sort, String description, String time){
         //
@@ -166,7 +155,6 @@ public class HomeFragment extends Fragment{
         inflater.inflate(R.menu.main_menu, menu);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.notificationBtn) {
@@ -178,6 +166,7 @@ public class HomeFragment extends Fragment{
     private void loadNotificationFragment() {
         NotificationFragment notificationFragment = new NotificationFragment();
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
         fragmentTransaction.replace(R.id.containerId, notificationFragment);
         fragmentTransaction.commit();
     }

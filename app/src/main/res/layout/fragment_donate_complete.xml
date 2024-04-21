@@ -31,7 +31,7 @@
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/lexendbold"
             android:lineSpacingMultiplier="1.2"
-            android:text="@string/complete"
+            android:text="@string/donated"
             android:textColor="@color/black"
             android:textSize="38dp"
             android:textStyle="bold" />
@@ -47,27 +47,11 @@
             android:justificationMode="inter_word"
             android:lineSpacingMultiplier="1.5"
             android:textColor="@color/notsoBlack"
-            android:text="@string/uploadcompleteTxt"
+            android:text="@string/completeTxt"
             android:textSize="16dp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/newCampaignBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/toHomeBtn"
-        android:layout_marginStart="@dimen/startend_margin"
-        android:layout_marginEnd="@dimen/startend_margin"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/button_bg_2"
-        android:fontFamily="@font/lexendbold"
-        android:text="@string/newcapaign"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
 
 
     <androidx.appcompat.widget.AppCompatButton

@@ -48,6 +48,14 @@ public class Campaign {
         this.time = time;
     }
 
+    private boolean liked;
+    public boolean isLiked() {
+        return liked;
+    }
+    public void setLiked(boolean liked) {
+        this.liked = liked;
+    }
+
     public Campaign(String image, String title, String aiming, String location, String sort, String description, String time) {
         //this.image = image;
         this.image = image;

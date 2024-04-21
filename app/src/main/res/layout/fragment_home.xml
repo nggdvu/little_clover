@@ -102,21 +102,38 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/startend_margin"
+                android:layout_marginEnd="@dimen/startend_margin">
 
                 <TextView
                     android:id="@+id/titleTxt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/activity"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginStart="@dimen/startend_margin"
-                    android:layout_marginEnd="@dimen/startend_margin"
+
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:fontFamily="@font/lexendbold"
                     android:textColor="@color/gray"
                     android:textAllCaps="true" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/allStoryBtn"
+                    android:src="@drawable/caretright"
+                    android:background="@color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             <HorizontalScrollView
                 android:id="@+id/storyView"

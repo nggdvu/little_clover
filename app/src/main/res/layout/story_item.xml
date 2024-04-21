@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@color/transparent"
     android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
     app:cardElevation="0dp">
 
     <LinearLayout

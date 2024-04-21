@@ -88,15 +88,20 @@
     <string name="communityguideTxt">Cộng đồng lá nhỏ là những người luôn sẵn sàng đồng hành, hỗ trợ cùng bạn nhằm chung tay ủng hộ cho những chiếc lá chưa lành.</string>
     <string name="done">xong</string>
     <string name="yourpageguideTxt">Trang của bạn là nơi bạn có thể xem lại những đóng góp của bạn với cộng đồng, cũng như tùy chỉnh giao diện ứng dụng.</string>
-    <string name="donateInfo">thông tin quyên góp</string>
+    <string name="donateInfo">thông tin</string>
     <string name="notification">thông báo</string>
     <string name="notificationTxt">bạn chưa có thông báo mới nào.</string>
     <string name="addstory">thêm tin mới</string>
     <string name="createStory">tạo tin mới</string>
     <string name="uploadstoryImg">"tải ảnh "</string>
     <string name="captureImg">chụp ảnh</string>
-    <string name="complete">cảm ơn bạn!</string>
-    <string name="completeTxt">Tinh thần “lá lành đùm lá rách” của người Việt Nam ta luôn là một trong những truyền thống tốt đẹp và đáng trân quý của dân tộc. </string>
+    <string name="complete">đăng tải thành công!</string>
+    <string name="completeTxt">Tinh thần “lá lành đùm lá rách” của người Việt Nam ta luôn là một trong những truyền thống tốt đẹp và đáng trân quý của dân tộc. Cảm ơn vì nghĩa cử cao đẹp của bạn đã giúp thế giới này trở nên tốt đẹp hơn.</string>
     <string name="newcapaign">tạo chiến dịch mới</string>
     <string name="tohome">về trang chủ</string>
+    <string name="allStory">hoạt động</string>
+    <string name="infoTxt">Bạn đang thực hiện quyên góp dưới hình thức chuyển khoản trực tiếp cho tổ chức bảo hộ của chiến dịch. Mọi thông tin đều được bảo mật và minh bạch.</string>
+    <string name="confirm">xác nhận</string>
+    <string name="donated">quyên góp thành công!</string>
+    <string name="uploadcompleteTxt">Cảm ơn bạn đã chia sẻ chiến dịch và lan tỏa tình yêu thương tới cộng đồng. Câu chuyện của bạn sẽ sớm được đăng lên sau khi lá nhỏ kiểm duyệt.</string>
 </resources>

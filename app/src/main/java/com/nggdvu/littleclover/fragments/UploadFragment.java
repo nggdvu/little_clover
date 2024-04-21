@@ -93,19 +93,22 @@ public class UploadFragment extends Fragment {
 
         //Nhập số định dạng tiền tệ
         moneyEditText.addTextChangedListener(new TextWatcher() {
-            DecimalFormat decimalFormat = new DecimalFormat("#,###");
+            DecimalFormat decimalFormat = new DecimalFormat("#,###đ");
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 moneyEditText.removeTextChangedListener(this);
                 try {
                     String originalString = s.toString();
-                    String cleanString = originalString.replaceAll("[,.]", "");
+                    String cleanString = originalString.replaceAll("[,.đ]", "");
                     long longVal = Long.parseLong(cleanString);
                     String formattedString = decimalFormat.format(longVal);
                     moneyEditText.setText(formattedString);

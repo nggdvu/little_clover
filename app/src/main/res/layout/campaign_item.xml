@@ -230,31 +230,47 @@
             android:fontFamily="@font/lexendmedium"
             android:textColor="@color/black"/>
 
-        <!--androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/heart"
-                android:id="@+id/like"
-                app:layout_constraintStart_toStartOf="parent"/>
-            <ImageView
+                android:background="@color/transparent"
+                android:id="@+id/likeBtn"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            
+            <ImageButton
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/arrowscounterclockwise"
-                app:layout_constraintStart_toEndOf="@id/like" />
+                android:src="@drawable/navigationarrow"
+                android:id="@+id/shareBtn"
+                android:background="@color/transparent"
+                app:layout_constraintStart_toEndOf="@id/likeBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:id="@+id/save"
-                android:src="@drawable/bookmarksimple"
-                app:layout_constraintEnd_toEndOf="parent"/>
-        </androidx.constraintlayout.widget.ConstraintLayout-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="100dp"
+                android:layout_height="36dp"
+                android:text="@string/supportTxt"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/lexendbold"
+                android:textSize="14dp"
+                android:textAllCaps="false"
+                android:id="@+id/supportBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/smallbutton_bg"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
