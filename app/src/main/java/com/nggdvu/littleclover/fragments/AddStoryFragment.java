@@ -59,11 +59,8 @@ public class AddStoryFragment extends Fragment {
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
     StorageReference storageReference;
-    //CollectionReference storiesCollection;
     DatabaseReference newStoryRef;
     FirebaseStorage storage;
-    //FirebaseFirestore firestore;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,8 +76,6 @@ public class AddStoryFragment extends Fragment {
         captureImageButton = fragmentView.findViewById(R.id.captureImgBtn);
 
         storage = FirebaseStorage.getInstance();
-        //firestore = FirebaseFirestore.getInstance();
-        //storiesCollection = firestore.collection("stories");
         newStoryRef = FirebaseDatabase.getInstance().getReference().child("stories");
 
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +197,6 @@ public class AddStoryFragment extends Fragment {
     }*/
 
     private void insertStoryData() {
-        // Upload image to Cloud Storage
         storageReference = FirebaseStorage.getInstance().getReference().child("stories").child(imageUri.getLastPathSegment());
         storageReference.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

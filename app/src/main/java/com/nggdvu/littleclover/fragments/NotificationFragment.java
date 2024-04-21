@@ -19,18 +19,18 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_notification, container, false);
 
-        /*backBtn.setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HomeFragment homeFragment = new HomeFragment("image", "title", "aiming", "location", "description", "description","time");
+                HomeFragment homeFragment = new HomeFragment("photo", "hashtag","image", "title", "aiming", "location", "description", "description","time");
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
                 fragmentTransaction.replace(R.id.containerId, homeFragment);
                 fragmentTransaction.commit();
             }
-        });*/
+        });
         return fragmentView;
     }
 }

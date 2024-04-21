@@ -48,8 +48,6 @@ public class LoginFragment extends AppCompatActivity {
     SignInClient oneTapClient;
     GoogleSignInClient googleSignInClient;
     LottieAnimationView animationView;
-    BeginSignInRequest signInRequest;
-    static final int REQ_ONE_TAP = 100;
     int RC_SIGN_IN = 20;
 
     @Override

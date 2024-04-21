@@ -16,7 +16,7 @@ import com.nggdvu.littleclover.R;
 
 public class DonateCompleteFragment extends Fragment {
 
-    Button newCampaignBtn, toHomeBtn;
+    Button toHomeBtn;
     ImageView clover;
 
     @Override

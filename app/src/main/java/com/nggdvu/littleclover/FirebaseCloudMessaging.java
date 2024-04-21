@@ -20,7 +20,6 @@ public class FirebaseCloudMessaging extends FirebaseMessagingService {
         getFirebaseMessage(message.getNotification().getTitle(), message.getNotification().getBody());
     }
 
-
     private void getFirebaseMessage(String title, String body) {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "notify")

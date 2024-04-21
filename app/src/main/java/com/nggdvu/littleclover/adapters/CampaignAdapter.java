@@ -40,6 +40,7 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
                 .load(campaign.getImage())
                 .into(viewHolder.imageView);
 
+        //Nút like
         viewHolder.likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,10 +58,11 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
         viewHolder.shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle share button click
+
             }
         });
 
+        //Nút đồng hành
         viewHolder.donateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

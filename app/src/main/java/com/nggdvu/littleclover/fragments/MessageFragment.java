@@ -56,41 +56,6 @@ public class MessageFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
-        /*Bundle bundle = getArguments();
-        if (bundle != null) {
-            Uid = bundle.getString("Uid");
-            name = bundle.getString("name");
-            // Use the retrieved values here
-        }
-
-        msrv.setHasFixedSize(true);
-        msrv.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                messageLists.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    final String getUid = snapshot.getKey();
-
-                    if (!getUid.equals(Uid)) {
-                        final String getName = snapshot.child("name").getValue(String.class);
-                        final String getAvatar = snapshot.child("profile").getValue(String.class);
-
-                        Message messageList = new Message(getName, getUid, "", getAvatar, 0);
-                        messageLists.add(messageList);
-                    }
-                }
-                msrv.setAdapter(new MessageAdapter(messageLists, getContext()));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle the cancellation here
-            }
-        });*/
-
         return fragmentView;
     }
     public MessageFragment(String name, String email, String avatar){

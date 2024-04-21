@@ -47,7 +47,6 @@ public class Campaign {
     public void setTime(String time) {
         this.time = time;
     }
-
     private boolean liked;
     public boolean isLiked() {
         return liked;

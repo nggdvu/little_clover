@@ -125,7 +125,7 @@ public class UserFragment extends Fragment {
                 // Perform logout action
                 Intent intent = new Intent(getActivity(), WelcomeFragment.class);
                 startActivity(intent);
-                getActivity().finish(); // Optional: finish the current activity to prevent going back
+                getActivity().finish();
             }
         });
         builder.setNegativeButton("Hủy", null);
@@ -143,118 +143,5 @@ public class UserFragment extends Fragment {
         });
 
         dialog.show();
-
-    /*aSwitch = view.findViewById(R.id.darkmodeSwitch);
-
-        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                }
-                recreateActivity(); // Hàm này để tạo lại activity sau khi thay đổi chế độ giao diện
-            }
-        });*/
-
-        /*changeLanguage = view.findViewById(R.id.changeLanguage);
-
-        Spinner languageSpinner = view.findViewById(R.id.languageSpinner);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, languages);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        languageSpinner.setAdapter(adapter);
-        languageSpinner.setSelection(0);
-        languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLanguage = parent.getItemAtPosition(position).toString();
-                if (selectedLanguage.equals("Tiếng Việt")) {
-                    setLocale(requireActivity(), "vi");
-                    Intent intent = new Intent(requireActivity(), requireActivity().getClass());
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    requireActivity().startActivity(intent);
-                    requireActivity().finish();
-                } else if (selectedLanguage.equals("English")) {
-                    setLocale(requireActivity(), "en");
-                    Intent intent = new Intent(requireActivity(), requireActivity().getClass());
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    requireActivity().startActivity(intent);
-                    requireActivity().finish();
-                } else if (selectedLanguage.equals("日本語")) {
-                    setLocale(requireActivity(), "ja");
-                    Intent intent = new Intent(requireActivity(), requireActivity().getClass());
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    requireActivity().startActivity(intent);
-                    requireActivity().finish();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        /*languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLanguageCode = ""; // Lưu trữ mã ngôn ngữ được chọn từ Spinner
-                switch (position) {
-                    case 0:
-                        selectedLanguageCode = "en";
-                        break;
-                    case 1:
-                        selectedLanguageCode = "vi";
-                        break;
-                    case 2:
-                        selectedLanguageCode = "ja";
-                        break;
-                    // Thêm các case khác nếu bạn có nhiều ngôn ngữ hơn
-                }
-                updateLanguage(selectedLanguageCode);
-            }
-
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // Xử lý khi không có ngôn ngữ nào được chọn (không cần thiết)
-            }
-        });*/
-    /*public void setLocale(Activity activity, String langCode){
-        Locale locale = new Locale(langCode);
-        locale.setDefault(locale);
-        Resources resources = activity.getResources();
-        Configuration configuration = resources.getConfiguration();
-        configuration.setLocale(locale);
-        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-
-        Intent intent = new Intent(activity, activity.getClass());
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        activity.startActivity(intent);
-        activity.finish();
-    }*/
-
-    /*private void recreateActivity() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getActivity().recreate();
-        } else {
-            Intent intent = getActivity().getIntent();
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            getActivity().finish();
-            getActivity().overridePendingTransition(0, 0);
-            startActivity(intent);
-            getActivity().overridePendingTransition(0, 0);
-        }
-    }*/
-
-    /*private void updateLanguage(String languageCode) {
-        currentLanguage = languageCode;
-        Locale locale = new Locale(languageCode);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-    }*/
     }
 }

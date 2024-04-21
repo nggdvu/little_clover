@@ -22,9 +22,8 @@ import com.nggdvu.littleclover.fragments.MessageFragment;
 import com.nggdvu.littleclover.fragments.UploadFragment;
 import com.nggdvu.littleclover.fragments.UserFragment;
 
-public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLayout.OnRefreshListener*/ {
+public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    //SwipeRefreshLayout swipeRefreshLayout;
     FrameLayout frameLayout;
     Toolbar toolbar;
 
@@ -35,9 +34,6 @@ public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLay
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNav);
         frameLayout = findViewById(R.id.containerId);
-
-        /*swipeRefreshLayout = findViewById(R.id.refresh);
-        swipeRefreshLayout.setOnRefreshListener(this);*/
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -80,15 +76,4 @@ public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLay
         fragmentTransaction.replace(R.id.containerId, fragment);
         fragmentTransaction.commit();
     }
-
-    /*@Override
-    public void onRefresh(){
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        }, 3000);
-    }*/
-
 }
