@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment{
 
         //Chiến dịch
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, true);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
         //Truyền dữ liệu từ database
@@ -108,17 +108,6 @@ public class HomeFragment extends Fragment{
         databaseReference = FirebaseDatabase.getInstance().getReference("campaigns");
         databaseReference = FirebaseDatabase.getInstance().getReference("stories");
 
-        /*firebaseFirestore = FirebaseFirestore.getInstance();
-        storyArrayList = new ArrayList<Story>();
-        storyAdapter = new StoryAdapter(getContext(), storyArrayList);
-        storyrv.setAdapter(storyAdapter);
-        EventChangeListener();*/
-
-        Toolbar mainToolbar = fragmentView.findViewById(R.id.mainToolbar);
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.setSupportActionBar(mainToolbar);
-        activity.getSupportActionBar().setTitle("");
-        setHasOptionsMenu(true);
         return fragmentView;
     }
 
@@ -147,27 +136,5 @@ public class HomeFragment extends Fragment{
         super.onStop();
         campaignAdapter.stopListening();
         storyAdapter.startListening();
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.main_menu, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.notificationBtn) {
-            loadNotificationFragment();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    private void loadNotificationFragment() {
-        NotificationFragment notificationFragment = new NotificationFragment();
-        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
-        fragmentTransaction.replace(R.id.containerId, notificationFragment);
-        fragmentTransaction.commit();
     }
 }

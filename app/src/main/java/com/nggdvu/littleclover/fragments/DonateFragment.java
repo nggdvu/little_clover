@@ -1,11 +1,14 @@
 package com.nggdvu.littleclover.fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -25,6 +28,7 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
     private EditText moneyEditText;
     private Button button1, button2, button3, button4, button5, button6, confirmButton;
     ImageButton backBtn;
+    String amount;
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,11 +66,17 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DonateCompleteFragment donateCompleteFragment = new DonateCompleteFragment();
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
-                fragmentTransaction.replace(R.id.containerId, donateCompleteFragment);
-                fragmentTransaction.commit();
+                openLink();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        DonateCompleteFragment donateCompleteFragment = new DonateCompleteFragment();
+                        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
+                        fragmentTransaction.replace(R.id.containerId, donateCompleteFragment);
+                        fragmentTransaction.commit();
+                    }
+                }, 500);
             }
         });
 
@@ -91,8 +101,20 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
                     String formattedString = decimalFormat.format(longVal);
                     moneyEditText.setText(formattedString);
                     moneyEditText.setSelection(formattedString.length());
+
+                    // Update the amount parameter in the URL
+                    Uri.Builder builder = new Uri.Builder();
+                    builder.scheme("https")
+                            .authority("img.vietqr.io")
+                            .appendPath("image")
+                            .appendPath("mbbank-0855229688-compact2.png")
+                            .appendQueryParameter("amount", cleanString)
+                            .appendQueryParameter("addInfo", "Quyen%20Gop");
+                    amount = builder.build().toString();
+
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
+                    // Handle the exception, display an error message to the user, or take appropriate action.
                 }
                 moneyEditText.addTextChangedListener(this);
             }
@@ -116,5 +138,10 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
         } else if (view.getId() == R.id.button6) {
             moneyEditText.setText("500,000đ");
         }
+    }
+    private void openLink() {
+        Uri uri = Uri.parse(amount);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        getContext().startActivity(intent);
     }
 }

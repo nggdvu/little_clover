@@ -42,6 +42,7 @@ import com.nggdvu.littleclover.R;
 import com.nggdvu.littleclover.models.Campaign;
 
 import java.text.DecimalFormat;
+import java.util.List;
 
 public class UploadFragment extends Fragment {
 

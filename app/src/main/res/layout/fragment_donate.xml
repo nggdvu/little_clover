@@ -86,6 +86,7 @@
             android:drawableLeft="@drawable/handarrowup"
             android:drawablePadding="16dp"
             android:textSize="16dp"
+            android:textColor="@color/black"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/lexendmedium"
             android:background="@drawable/type_box"/>
@@ -208,7 +209,7 @@
         android:text="@string/confirm"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#ffffff"
+        android:textColor="@color/absoluteWhite"
         android:textSize="16dp" />
 
 

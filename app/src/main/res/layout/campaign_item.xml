@@ -159,22 +159,24 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="100dp"
                 android:id="@+id/avtFrame"
+                android:layout_marginStart="2dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <ImageView
                     android:id="@+id/funderAvt"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/cloversvg_02"
+                    android:scaleType="centerCrop"/>
 
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Diep Vu"
+                android:text="@string/app_name"
                 android:id="@+id/funderId"
                 android:fontFamily="@font/lexendmedium"
                 android:textSize="14dp"
@@ -184,7 +186,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:paddingStart="8dp"/>
 
-            <!--androidx.appcompat.widget.AppCompatButton
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sealcheck"
+                app:layout_constraintStart_toEndOf="@id/funderId"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingStart="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="100dp"
                 android:layout_height="36dp"
                 android:text="@string/supportTxt"
@@ -196,7 +207,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:background="@drawable/smallbutton_bg"/-->
+                android:background="@drawable/smallbutton_bg"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -205,6 +216,7 @@
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#d4f1ca"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="2dp"
             app:cardCornerRadius="32dp">
 
             <TextView
@@ -257,19 +269,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="100dp"
-                android:layout_height="36dp"
-                android:text="@string/supportTxt"
-                android:textColor="#ffffff"
-                android:fontFamily="@font/lexendbold"
-                android:textSize="14dp"
-                android:textAllCaps="false"
-                android:id="@+id/supportBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:background="@drawable/smallbutton_bg"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
