@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLay
                 int itemId = menuItem.getItemId();
 
                 if (itemId == R.id.homeBtn) {
-                    loadFragment(new HomeFragment("image", "title", "aiming", "location", "description", "description", "time"), false);
+                    loadFragment(new HomeFragment("photo", "hashtag", "image", "title", "aiming", "location", "description", "description", "time"), false);
 
                 } else if (itemId == R.id.mapBtn) {
                     loadFragment(new MapFragment(), false);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity /*implements SwipeRefreshLay
                 return true;
             }
         });
-        loadFragment(new HomeFragment("image", "title", "aiming", "location", "description", "description","time"),true);
+        loadFragment(new HomeFragment("photo", "hashtag", "image", "title", "aiming", "location", "description", "description", "time"),true);
     }
 
     private void loadFragment(Fragment fragment, boolean isAppInitialized){

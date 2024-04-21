@@ -22,7 +22,7 @@ public class NotificationFragment extends Fragment {
         // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_notification, container, false);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        /*backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomeFragment homeFragment = new HomeFragment("image", "title", "aiming", "location", "description", "description","time");
@@ -30,7 +30,7 @@ public class NotificationFragment extends Fragment {
                 fragmentTransaction.replace(R.id.containerId, homeFragment);
                 fragmentTransaction.commit();
             }
-        });
+        });*/
         return fragmentView;
     }
 }

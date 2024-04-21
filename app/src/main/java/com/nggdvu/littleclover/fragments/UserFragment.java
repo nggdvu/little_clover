@@ -32,8 +32,7 @@ public class UserFragment extends Fragment {
 
     Toolbar userToolbar;
     CardView memberCard, changeLanguage, userGuide;
-    //Switch aSwitch;
-    //static final String[] languages = {"Tiếng Việt", "English", "日本語"};
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +50,7 @@ public class UserFragment extends Fragment {
             public void onClick(View v) {
                 UserGuideFragment userGuideFragment = new UserGuideFragment();
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
                 fragmentTransaction.replace(R.id.containerId, userGuideFragment);
                 fragmentTransaction.commit();
             }
@@ -60,15 +60,13 @@ public class UserFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Xử lý sự kiện khi người dùng nhấn vào CardView
-                shareImage(memberCard); // Gọi phương thức chia sẻ ảnh
+                shareImage(memberCard);
             }
         });
 
         activity.setSupportActionBar(userToolbar);
         activity.getSupportActionBar().setTitle("");
-
-        setHasOptionsMenu(true); // Enable options menu
-
+        setHasOptionsMenu(true);
         return view;
     }
     @Override

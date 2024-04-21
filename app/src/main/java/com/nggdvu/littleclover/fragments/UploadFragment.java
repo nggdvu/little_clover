@@ -28,6 +28,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -243,6 +244,12 @@ public class UploadFragment extends Fragment {
         Campaign campaign = new Campaign(imageURL, title, aiming, location, sort, description, time);
 
         newCampaignRef.push().setValue(campaign);
+
+        UploadCompleteFragment uploadCompleteFragment = new UploadCompleteFragment();
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
+        fragmentTransaction.replace(R.id.containerId, uploadCompleteFragment);
+        fragmentTransaction.commit();
         Toast.makeText(getContext(), "Đăng tải thành công!", Toast.LENGTH_SHORT).show();
     }
 }

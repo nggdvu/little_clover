@@ -3,7 +3,12 @@ package com.nggdvu.littleclover.models;
 public class Story {
     Story() {
     }
-
+    public String getPhoto() {
+        return photo;
+    }
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
     public String getHashtag() {
         return hashtag;
     }
@@ -11,17 +16,9 @@ public class Story {
         this.hashtag = hashtag;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
     public Story(String photo, String hashtag) {
-        this.hashtag = hashtag;
         this.photo = photo;
-
+        this.hashtag = hashtag;
     }
-    String hashtag, photo;
+    String photo, hashtag;
 }

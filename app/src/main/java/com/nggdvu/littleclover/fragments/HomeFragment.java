@@ -44,29 +44,22 @@ public class HomeFragment extends Fragment{
     DatabaseReference databaseReference;
     ImageButton addStoryBtn;
     CampaignAdapter campaignAdapter;
-    FirebaseFirestore firebaseFirestore;
+    //FirebaseFirestore firebaseFirestore;
     StoryAdapter storyAdapter;
-    ArrayList<Story> storyArrayList;
+    //ArrayList<Story> storyArrayList;
     String image, title, aiming, location, sort, description, time;
     String photo, hashtag;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
-        recyclerView = fragmentView.findViewById(R.id.rv);
         addStoryBtn = fragmentView.findViewById(R.id.addStoryBtn);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView = fragmentView.findViewById(R.id.rv);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
-
-        storyrv = fragmentView.findViewById(R.id.storyrv);
-        storyrv.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        storyrv.setLayoutManager(linearLayoutManager1);
-        storyrv.setNestedScrollingEnabled(false);
 
         //Truyền dữ liệu từ database
         FirebaseRecyclerOptions<Campaign> options =
@@ -77,29 +70,38 @@ public class HomeFragment extends Fragment{
         campaignAdapter = new CampaignAdapter(options);
         recyclerView.setAdapter(campaignAdapter);
 
-        /*FirebaseRecyclerOptions<Story> stories =
+        storyrv = fragmentView.findViewById(R.id.storyrv);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true);
+        storyrv.setLayoutManager(linearLayoutManager1);
+        storyrv.setNestedScrollingEnabled(false);
+
+        FirebaseRecyclerOptions<Story> stories =
                 new FirebaseRecyclerOptions.Builder<Story>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("stories"), Story.class)
-                        .build();*/
+                        .build();
+
+        storyAdapter = new StoryAdapter(stories);
+        storyrv.setAdapter(storyAdapter);
 
         addStoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AddStoryFragment addStoryFragment = new AddStoryFragment();
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
                 fragmentTransaction.replace(R.id.containerId, addStoryFragment);
                 fragmentTransaction.commit();
             }
         });
-        
-        databaseReference = FirebaseDatabase.getInstance().getReference("campaigns");
 
-        firebaseFirestore = FirebaseFirestore.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference("campaigns");
+        databaseReference = FirebaseDatabase.getInstance().getReference("stories");
+
+        /*firebaseFirestore = FirebaseFirestore.getInstance();
         storyArrayList = new ArrayList<Story>();
         storyAdapter = new StoryAdapter(getContext(), storyArrayList);
         storyrv.setAdapter(storyAdapter);
-        EventChangeListener();
-
+        EventChangeListener();*/
 
         Toolbar mainToolbar = fragmentView.findViewById(R.id.mainToolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
@@ -109,7 +111,7 @@ public class HomeFragment extends Fragment{
         return fragmentView;
     }
 
-    private void EventChangeListener() {
+    /*private void EventChangeListener() {
         firebaseFirestore.collection("stories").orderBy("hashtag", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -128,10 +130,11 @@ public class HomeFragment extends Fragment{
                         }
                     }
                 });
-    }
+    }*/
 
 
-    public HomeFragment(String image, String title, String aiming, String location, String sort, String description, String time){
+    public HomeFragment(String photo, String hashtag, String image, String title, String aiming, String location, String sort, String description, String time){
+        //
         this.image = image;
         this.title = title;
         this.aiming = aiming;
@@ -139,18 +142,22 @@ public class HomeFragment extends Fragment{
         this.sort = sort;
         this.description = description;
         this.time = time;
+        this.photo = photo;
+        this.hashtag = hashtag;
     }
 
     @Override
     public void onStart(){
         super.onStart();
         campaignAdapter.startListening();
+        storyAdapter.startListening();
     }
 
     @Override
     public void onStop(){
         super.onStop();
         campaignAdapter.stopListening();
+        storyAdapter.startListening();
     }
 
     @Override
@@ -159,20 +166,6 @@ public class HomeFragment extends Fragment{
         inflater.inflate(R.menu.main_menu, menu);
     }
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.notificationBtn:
-                // Handle notification button click
-                return true;
-            case R.id.messageBtn:
-                // Load message fragment
-                loadMessageFragment();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

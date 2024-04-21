@@ -31,6 +31,7 @@ public class UserGuideFragment2 extends Fragment {
             public void onClick(View v) {
                 UserFragment userFragment = new UserFragment();
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.enter_bottom_to_top, R.anim.exit_top_to_bottom);
                 fragmentTransaction.replace(R.id.containerId, userFragment);
                 fragmentTransaction.commit();
             }

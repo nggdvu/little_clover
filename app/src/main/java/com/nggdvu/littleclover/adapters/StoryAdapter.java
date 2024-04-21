@@ -21,19 +21,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> {
+public class StoryAdapter extends FirebaseRecyclerAdapter<Story, StoryAdapter.ViewHolder> {
+        public StoryAdapter(@NonNull FirebaseRecyclerOptions<Story> stories) {
+            super(stories);
+        }
 
-    Context context;
-    ArrayList<Story> storyArrayList;
-
-    public StoryAdapter(Context context, ArrayList<Story> storyArrayList) {
-        this.context = context;
-        this.storyArrayList = storyArrayList;
-    }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Story story = storyArrayList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position, @NonNull Story story) {
+        //Story story = storyArrayList.get(position);
         viewHolder.hashtag.setText(story.getHashtag());
 
         Picasso.get()
@@ -43,25 +39,18 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
 
     @NonNull
     @Override
-    public StoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.story_item, parent, false);
         return new ViewHolder(view);
     }
 
-    @Override
-    public int getItemCount(){
-        return storyArrayList.size();
-    }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView hashtag;
         ImageView imageView;
-        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            hashtag = itemView.findViewById(R.id.hashtagTxt);
-            imageView = itemView.findViewById(R.id.storyImg);
-            cardView = itemView.findViewById(R.id.storyCard);
+            imageView = itemView.findViewById(R.id.getPhoto);
+            hashtag = itemView.findViewById(R.id.getHashtag);
         }
     }
 }

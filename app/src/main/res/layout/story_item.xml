@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
+    android:layout_width="104dp"
     android:layout_height="wrap_content"
-    android:id="@+id/storyCard"
+    android:id="@+id/storyItem"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@color/transparent"
     android:layout_marginEnd="8dp"
@@ -17,11 +17,10 @@
             android:id="@+id/storyFrame"
             android:layout_width="100dp"
             android:layout_height="144dp"
-            android:layout_gravity="center"
             app:cardCornerRadius="8dp">
 
             <ImageView
-                android:id="@+id/storyImg"
+                android:id="@+id/getPhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -33,22 +32,17 @@
 
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="8dp">
 
             <TextView
-                android:id="@+id/storynameTxt"
+                android:id="@+id/getHashtag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lexendmedium"
-                android:text="Hương Giang"
+                android:maxLines="1"
+                android:paddingTop="8dp"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

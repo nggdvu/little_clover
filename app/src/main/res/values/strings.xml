@@ -94,4 +94,9 @@
     <string name="addstory">thêm tin mới</string>
     <string name="createStory">tạo tin mới</string>
     <string name="uploadstoryImg">"tải ảnh "</string>
+    <string name="captureImg">chụp ảnh</string>
+    <string name="complete">cảm ơn bạn!</string>
+    <string name="completeTxt">Tinh thần “lá lành đùm lá rách” của người Việt Nam ta luôn là một trong những truyền thống tốt đẹp và đáng trân quý của dân tộc. </string>
+    <string name="newcapaign">tạo chiến dịch mới</string>
+    <string name="tohome">về trang chủ</string>
 </resources>
