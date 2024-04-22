@@ -102,7 +102,6 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
                     moneyEditText.setText(formattedString);
                     moneyEditText.setSelection(formattedString.length());
 
-                    // Update the amount parameter in the URL
                     Uri.Builder builder = new Uri.Builder();
                     builder.scheme("https")
                             .authority("img.vietqr.io")
@@ -114,7 +113,6 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
 
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
-                    // Handle the exception, display an error message to the user, or take appropriate action.
                 }
                 moneyEditText.addTextChangedListener(this);
             }

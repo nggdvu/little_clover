@@ -53,8 +53,6 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.ui.database)
     implementation(libs.recycler.view)
-    implementation(libs.navigation.ui)
-    implementation(libs.navigation.fragment)
     implementation(libs.firebase.storage)
     implementation(libs.picasso)
     implementation(libs.firebase.messaging)
