@@ -1,5 +1,12 @@
 package com.nggdvu.littleclover.adapters;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,13 +62,6 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
             }
         });
 
-        viewHolder.shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
         //Nút đồng hành
         viewHolder.donateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +76,7 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
         });
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -87,8 +88,7 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
         TextView title, aiming, location, sort, description, time;
         ImageView imageView, likeButton;
         Button donateButton;
-        ImageButton shareButton;
-        CardView cardView;
+        CardView campaignCard;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -101,9 +101,8 @@ public class CampaignAdapter extends FirebaseRecyclerAdapter<Campaign, CampaignA
             description = itemView.findViewById(R.id.descriptionId);
             time = itemView.findViewById(R.id.timeId);
             donateButton = itemView.findViewById(R.id.supportBtn);
-            cardView = itemView.findViewById(R.id.homeItem);
+            campaignCard = itemView.findViewById(R.id.homeItem);
             likeButton = itemView.findViewById(R.id.likeBtn);
-            shareButton = itemView.findViewById(R.id.shareBtn);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.nggdvu.littleclover.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -63,7 +64,6 @@ public class HomeFragment extends Fragment{
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
-        //Truyền dữ liệu từ database
         FirebaseRecyclerOptions<Campaign> options =
                 new FirebaseRecyclerOptions.Builder<Campaign>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("campaigns"), Campaign.class)

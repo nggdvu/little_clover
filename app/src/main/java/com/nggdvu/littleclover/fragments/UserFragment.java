@@ -31,7 +31,7 @@ import com.nggdvu.littleclover.R;
 public class UserFragment extends Fragment {
 
     Toolbar userToolbar;
-    CardView memberCard, changeLanguage, userGuide;
+    CardView memberCard, contact, userGuide;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +44,7 @@ public class UserFragment extends Fragment {
 
         memberCard = view.findViewById(R.id.card);
         userGuide = view.findViewById(R.id.userGuide);
+        contact = view.findViewById(R.id.contact);
 
         userGuide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,10 +57,20 @@ public class UserFragment extends Fragment {
             }
         });
 
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"nggdvu@gmail.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "HỖ TRỢ - HỎI ĐÁP VỀ ỨNG DỤNG LÁ NHỎ");
+                startActivity(intent);
+            }
+        });
+
         memberCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Xử lý sự kiện khi người dùng nhấn vào CardView
                 shareImage(memberCard);
             }
         });
@@ -98,22 +109,17 @@ public class UserFragment extends Fragment {
         Bitmap bitmap = Bitmap.createBitmap(memberCard.getDrawingCache());
         memberCard.setDrawingCacheEnabled(false);
 
-        // Lưu bitmap vào bộ nhớ tạm
         String imagePath = MediaStore.Images.Media.insertImage(requireActivity().getContentResolver(), bitmap, "CardView", null);
 
-        // Tạo URI từ đường dẫn hình ảnh
         Uri imageUri = Uri.parse(imagePath);
 
-        // Tạo Intent để chia sẻ hình ảnh
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("image/*");
         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
 
         // Khởi chạy Intent chia sẻ
         startActivity(Intent.createChooser(shareIntent, "Chia sẻ qua"));
-        return;
     }
-
 
     private void showLogoutConfirmationDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

@@ -41,7 +41,7 @@ public class MessageFragment extends Fragment {
         View fragmentView = inflater.inflate(R.layout.fragment_message, container, false);
 
         msrv = fragmentView.findViewById(R.id.msrv);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, true);
         msrv.setLayoutManager(linearLayoutManager);
         msrv.setNestedScrollingEnabled(false);
 

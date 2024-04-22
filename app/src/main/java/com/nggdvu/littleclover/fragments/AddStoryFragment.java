@@ -142,14 +142,6 @@ public class AddStoryFragment extends Fragment {
         return fragmentView;
     }
 
-    private void openCamera() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
-
     private void openImageChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -157,23 +149,27 @@ public class AddStoryFragment extends Fragment {
         startActivityForResult(Intent.createChooser(intent, "Chọn ảnh"), PICK_IMAGE_REQUEST);
     }
 
+    private void openCamera() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             uploadImg.setImageBitmap(imageBitmap);
-
-            // Convert the Bitmap to Uri and upload the image
             imageUri = getImageUri(getContext(), imageBitmap);
             uploadData();
         } else if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             uploadImg.setImageURI(imageUri);
         } else {
-            Toast.makeText(getActivity(), "No image captured", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Không có ảnh", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -184,23 +180,10 @@ public class AddStoryFragment extends Fragment {
         return Uri.parse(path);
     }
 
-    /*@Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-            imageUri = data.getData();
-            uploadImg.setImageURI(imageUri);
-        } else {
-            Toast.makeText(getActivity(), "Không có hình ảnh nào được chọn", Toast.LENGTH_SHORT).show();
-        }
-    }*/
-
     private void insertStoryData() {
         storageReference = FirebaseStorage.getInstance().getReference().child("stories").child(imageUri.getLastPathSegment());
         storageReference.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    //Tạo link ảnh để xuất ra văn bản
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
